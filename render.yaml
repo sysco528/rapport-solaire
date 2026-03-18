@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: rapport-solaire
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python rapport_solaire.py
+    plan: free
+    envVars:
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
